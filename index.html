@@ -578,70 +578,73 @@
     </div>
   </div>
 
-   <!-- YouTube Videos Carousel -->
-  <div class="section">
-    <h2>Movies from our Youtube channel (subscribe)</h2>
-    <div class="carousel">
-      <button class="carousel-control prev" onclick="moveCarousel(-1)">❮</button>
-      <div class="carousel-inner">
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/ZUG3jxb9bFM?autoplay=1')">
-            <div class="video-title">Big Fish & Begonia (2016) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/ZUG3jxb9bFM/maxresdefault.jpg" alt="Killer Body thumbnail">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/XiImoJwpfJ8?autoplay=1')">
-            <div class="video-title">The Great Santini (1979) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/XiImoJwpfJ8/maxresdefault.jpg" alt="The Perfect Find thumbnail">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/LOwyDHQzLQs?autoplay=1')">
-            <div class="video-title">The Devils Female (1974) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/LOwyDHQzLQs/maxresdefault.jpg" alt="The Tutor thumbnail">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/L3dIFNw7XVI?autoplay=1')">
-            <div class="video-title">Parallel (2024) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/L3dIFNw7XVI/maxresdefault.jpg" alt="The Locksmith thumbnail">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/GrNNglupZPA?autoplay=1')">
-            <div class="video-title">Claudine (1974) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/GrNNglupZPA/maxresdefault.jpg" alt="The Ritual Killer thumbnail">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="video-container" onclick="openModal('https://www.youtube.com/embed/wkqKnmWbzLw?autoplay=1')">
-            <div class="video-title">Robbin (2024) Full Movie</div>
-            <div class="thumbnail-container">
-              <img src="https://i.ytimg.com/vi/wkqKnmWbzLw/maxresdefault.jpg" alt="Beautiful Disaster thumbnail">
-              <div class="play-button"></div>
-            </div>
+ <!-- YouTube Videos Carousel -->
+<div class="section" onclick="window.open('https://youtube.com/@tvyami_sa?si=ugctEa3mlEYTPY3L', '_blank')" style="cursor: pointer; position: relative;">
+  <div style="position: absolute; top: 10px; right: 10px; color: var(--secondary-color); font-size: 14px;">
+    (Click anywhere to visit our channel)
+  </div>
+  <h2>Movies from our YouTube channel (subscribe)</h2>
+  <div class="carousel">
+    <button class="carousel-control prev" onclick="event.stopPropagation(); moveCarousel(-1)">❮</button>
+    <div class="carousel-inner" onclick="event.stopPropagation()">
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/ZUG3jxb9bFM?autoplay=1', 'Big Fish & Begonia (2016) Full Movie')">
+          <div class="video-title">Big Fish & Begonia (2016) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/ZUG3jxb9bFM/maxresdefault.jpg" alt="Big Fish & Begonia thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
           </div>
         </div>
       </div>
-      <button class="carousel-control next" onclick="moveCarousel(1)">❯</button>
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/XiImoJwpfJ8?autoplay=1', 'The Great Santini (1979) Full Movie')">
+          <div class="video-title">The Great Santini (1979) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/XiImoJwpfJ8/maxresdefault.jpg" alt="The Great Santini thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/LOwyDHQzLQs?autoplay=1', 'The Devils Female (1974) Full Movie')">
+          <div class="video-title">The Devils Female (1974) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/LOwyDHQzLQs/maxresdefault.jpg" alt="The Devils Female thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/L3dIFNw7XVI?autoplay=1', 'Parallel (2024) Full Movie')">
+          <div class="video-title">Parallel (2024) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/L3dIFNw7XVI/maxresdefault.jpg" alt="Parallel thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/GrNNglupZPA?autoplay=1', 'Claudine (1974) Full Movie')">
+          <div class="video-title">Claudine (1974) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/GrNNglupZPA/maxresdefault.jpg" alt="Claudine thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="video-container" onclick="event.stopPropagation(); openModal('https://www.youtube.com/embed/wkqKnmWbzLw?autoplay=1', 'Robbin (2024) Full Movie')">
+          <div class="video-title">Robbin (2024) Full Movie</div>
+          <div class="thumbnail-container">
+            <img src="https://i.ytimg.com/vi/wkqKnmWbzLw/maxresdefault.jpg" alt="Robbin thumbnail" onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+        </div>
+      </div>
     </div>
+    <button class="carousel-control next" onclick="event.stopPropagation(); moveCarousel(1)">❯</button>
   </div>
+</div>
 
  <!-- More Google Drive Videos -->
 <div class="section">
