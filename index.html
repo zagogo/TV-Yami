@@ -757,24 +757,95 @@
     });
 
     // Content database for search
-    const contentDatabase = [
-      { title: "A United Kingdom", year: "2017", url: "https://drive.google.com/file/d/1aXNXRaS0bn5V2_wL-IRUoQM8MY_QiAWK/preview", type: "movie" },
-      { title: "Air", year: "2023", url: "https://drive.google.com/file/d/1nrvPvVYbPFOnM6E1US3aQgHtq-PONRHY/preview", type: "movie" },
-      { title: "Killer Body", year: "2023", url: "https://www.youtube.com/embed/ZUG3jxb9bFM?autoplay=1", type: "movie" },
-      { title: "The Perfect Find", year: "2023", url: "https://www.youtube.com/embed/XiImoJwpfJ8?autoplay=1", type: "movie" },
-      { title: "The Tutor", year: "2023", url: "https://www.youtube.com/embed/LOwyDHQzLQs?autoplay=1", type: "movie" },
-      { title: "The Locksmith", year: "2023", url: "https://www.youtube.com/embed/L3dIFNw7XVI?autoplay=1", type: "movie" },
-      { title: "The Ritual Killer", year: "2023", url: "https://www.youtube.com/embed/GrNNglupZPA?autoplay=1", type: "movie" },
-      { title: "Beautiful Disaster", year: "2023", url: "https://www.youtube.com/embed/wkqKnmWbzLw?autoplay=1", type: "movie" },
-      { title: "American Fiction", year: "2023", url: "https://drive.google.com/file/d/1DYLjdSdqLmFj9vlgjJXldQ0aPXskTFyE/preview", type: "movie" },
-      { title: "Amsterdam", year: "2023", url: "https://drive.google.com/file/d/1OXJDBvhdJ6WjwVVelQ16k2prXKxRrQrn/preview", type: "movie" },
-      { title: "Dear Basketball", year: "2017", url: "https://drive.google.com/file/d/1sHWOEhixlQ6Q3cMAQMff8E3TL-Jm9lDk/preview", type: "movie" },
-      { title: "Dangerous Lies", year: "2020", url: "https://drive.google.com/file/d/1KBaW16hSXnKrs6OCHssXK5m1RyD2FE0K/preview", type: "movie" },
-      { title: "Skeem Saam", year: "2023", url: "https://tvyami.blogspot.com/search/label/skeemsaam", type: "series" },
-      { title: "Ithonga", year: "2023", url: "https://tvyami.blogspot.com/search/label/ithonga", type: "series" },
-      { title: "Genesis", year: "2023", url: "https://tvyami.blogspot.com/search/label/genesis", type: "series" },
-      { title: "Xrepo", year: "2023", url: "https://tvyami.blogspot.com/search/label/xrepo", type: "series" }
-    ];
+  const contentDatabase = [
+  // Google Drive Movies (with corrected titles)
+  { 
+    title: "A United Kingdom (2017)", 
+    url: "https://drive.google.com/file/d/1aXNXRaS0bn5V2_wL-IRUoQM8MY_QiAWK/preview", 
+    type: "movie" 
+  },
+  { 
+    title: "Air (2023)", 
+    url: "https://drive.google.com/file/d/1nrvPvVYbPFOnM6E1US3aQgHtq-PONRHY/preview", 
+    type: "movie" 
+  },
+  
+  // YouTube Movies (with corrected titles)
+  { 
+    title: "Big Fish & Begonia (2016)",  // Changed from "Killer Body"
+    url: "https://www.youtube.com/embed/ZUG3jxb9bFM?autoplay=1", 
+    type: "movie" 
+  },
+  { 
+    title: "The Great Santini (1979)",  // Changed from "The Perfect Find"
+    url: "https://www.youtube.com/embed/XiImoJwpfJ8?autoplay=1", 
+    type: "movie" 
+  },
+  { 
+    title: "The Devils Female (1974)",  // Changed from "The Tutor"
+    url: "https://www.youtube.com/embed/LOwyDHQzLQs?autoplay=1", 
+    type: "movie" 
+  },
+  { 
+    title: "Parallel (2024)",  // Changed from "The Locksmith"
+    url: "https://www.youtube.com/embed/L3dIFNw7XVI?autoplay=1", 
+    type: "movie" 
+  },
+  { 
+    title: "Claudine (1974)",  // Changed from "The Ritual Killer"
+    url: "https://www.youtube.com/embed/GrNNglupZPA?autoplay=1", 
+    type: "movie" 
+  },
+  { 
+    title: "Robbin (2024)",  // Changed from "Beautiful Disaster"
+    url: "https://www.youtube.com/embed/wkqKnmWbzLw?autoplay=1", 
+    type: "movie" 
+  },
+  
+  // More Google Drive Movies
+  { 
+    title: "American Fiction (2023)", 
+    url: "https://drive.google.com/file/d/1DYLjdSdqLmFj9vlgjJXldQ0aPXskTFyE/preview", 
+    type: "movie" 
+  },
+  { 
+    title: "Amsterdam (2023)", 
+    url: "https://drive.google.com/file/d/1OXJDBvhdJ6WjwVVelQ16k2prXKxRrQrn/preview", 
+    type: "movie" 
+  },
+  { 
+    title: "Dear Basketball (2017)", 
+    url: "https://drive.google.com/file/d/1sHWOEhixlQ6Q3cMAQMff8E3TL-Jm9lDk/preview", 
+    type: "movie" 
+  },
+  { 
+    title: "Dangerous Lies (2020)", 
+    url: "https://drive.google.com/file/d/1KBaW16hSXnKrs6OCHssXK5m1RyD2FE0K/preview", 
+    type: "movie" 
+  },
+  
+  // TV Series
+  { 
+    title: "Skeem Saam (2023)", 
+    url: "https://tvyami.blogspot.com/search/label/skeemsaam", 
+    type: "series" 
+  },
+  { 
+    title: "Ithonga (2023)", 
+    url: "https://tvyami.blogspot.com/search/label/ithonga", 
+    type: "series" 
+  },
+  { 
+    title: "Genesis (2023)", 
+    url: "https://tvyami.blogspot.com/search/label/genesis", 
+    type: "series" 
+  },
+  { 
+    title: "Xrepo (2023)", 
+    url: "https://tvyami.blogspot.com/search/label/xrepo", 
+    type: "series" 
+  }
+];
 
     // Search functionality
     const searchInput = document.getElementById('searchInput');
@@ -937,8 +1008,41 @@
   });
   
   // Show all videos section
-  const allVideosSection = document.getElementById('allVideosSection');
-  allVideosSection.style.display = 'block';
+const allVideosSection = document.getElementById('allVideosSection');
+const allVideosContainer = document.getElementById('allVideosContainer');
+
+// Clear previous results
+allVideosContainer.innerHTML = '';
+
+// Filter only movies (exclude series if needed)
+const moviesOnly = contentDatabase.filter(item => item.type === 'movie');
+
+// Sort A-Z and create video items
+moviesOnly.sort((a,b) => a.title.localeCompare(b.title))
+  .forEach(video => {
+    const videoItem = document.createElement('div');
+    videoItem.className = 'all-videos-item';
+    
+    // Get correct thumbnail URL
+    const thumbUrl = video.url.includes('youtube.com') 
+      ? `https://i.ytimg.com/vi/${video.url.split('/embed/')[1].split('?')[0]}/maxresdefault.jpg`
+      : 'https://via.placeholder.com/300x450?text=Movie';
+    
+    videoItem.innerHTML = `
+      <div class="thumbnail-container">
+        <img src="${thumbUrl}" alt="${video.title}" 
+             onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+        <div class="play-button"></div>
+      </div>
+      <div class="video-title">${video.title}</div>
+    `;
+    
+    videoItem.onclick = () => openModal(video.url, video.title);
+    allVideosContainer.appendChild(videoItem);
+  });
+
+// Show the section
+allVideosSection.style.display = 'block';
   
   // Populate videos if empty
   const container = document.getElementById('allVideosContainer');
