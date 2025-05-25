@@ -544,7 +544,12 @@
   </div>
 
   <button class="watch-now" onclick="window.open('https://tvyami.blogspot.com/', '_blank')">🎬 Watch Now</button>
+<button class="watch-now" onclick="showAllVideos()">📺 Show All Videos (A-Z)</button>
 
+<div id="allVideosSection" style="display:none;">
+  <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Videos (A-Z)</h2>
+  <div id="allVideosContainer" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px auto;"></div>
+</div>
   <!-- Google Drive Videos Section (Now First) -->
   <div class="section">
     <h2>Featured Movies</h2>
@@ -902,6 +907,41 @@
         }
       });
     });
+    function showAllVideos() {
+  // Hide other sections
+  document.querySelectorAll('.section').forEach(section => {
+    section.style.display = 'none';
+  });
+  
+  // Show all videos section
+  const allVideosSection = document.getElementById('allVideosSection');
+  allVideosSection.style.display = 'block';
+  
+  // Populate videos if empty
+  const container = document.getElementById('allVideosContainer');
+  if (container.children.length === 0) {
+    contentDatabase
+      .filter(video => video.url.includes('youtube.com') || video.url.includes('drive.google.com'))
+      .sort((a,b) => a.title.localeCompare(b.title))
+      .forEach(video => {
+        const videoItem = document.createElement('div');
+        videoItem.style.width = '150px';
+        videoItem.style.cursor = 'pointer';
+        videoItem.innerHTML = `
+          <img src="${video.url.includes('youtube.com') 
+            ? 'https://i.ytimg.com/vi/'+video.url.split('/embed/')[1].split('?')[0]+'/maxresdefault.jpg' 
+            : 'https://via.placeholder.com/300x450?text=No+Thumbnail'}" 
+            style="width:100%; height:200px; object-fit:cover; border-radius:8px; border:2px solid #FF4500;"
+            onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+          <div style="margin-top:8px; font-size:14px; color:#FFD700; text-align:center;">
+            ${video.title} (${video.year})
+          </div>
+        `;
+        videoItem.onclick = () => openModal(video.url, `${video.title} (${video.year})`);
+        container.appendChild(videoItem);
+      });
+  }
+}
   </script>
 </body>
 </html>
