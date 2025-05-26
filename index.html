@@ -583,50 +583,7 @@
   <div style="position: absolute; top: 10px; right: 10px; color: var(--secondary-color); font-size: 14px;">
     (Click anywhere to visit our channel)
   </div>
-  <!-- TV Series Section -->
-<div class="section">
-  <h2>Popular TV Series</h2>
-  <div class="content-preview">
-    <!-- Godfather of Harlem -->
-    <div class="preview-item" onclick="showSeasons('godfather')">
-      <div class="thumbnail-container" style="height: 250px;">
-        <img src="https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" 
-             alt="Godfather of Harlem" class="preview-thumbnail">
-        <div class="play-button"></div>
-      </div>
-      <div class="preview-title">Godfather of Harlem</div>
-    </div>
-    
-    <!-- Add more series here following the same pattern -->
-    <!-- Example (uncomment when you add more series):
-    <div class="preview-item" onclick="showSeasons('another-series')">
-      <div class="thumbnail-container" style="height: 250px;">
-        <img src="URL_TO_SERIES_POSTER" alt="Another Series" class="preview-thumbnail">
-        <div class="play-button"></div>
-      </div>
-      <div class="preview-title">Another Series</div>
-    </div>
-    -->
-  </div>
   
-  <!-- Seasons Modal -->
-  <div id="seasonsModal" class="modal">
-    <div class="modal-content" style="max-width: 800px;">
-      <span class="close" onclick="closeSeasonsModal()">&times;</span>
-      <h2 id="seriesTitle" style="color: var(--secondary-color);"></h2>
-      <div id="seasonsContainer" class="categories"></div>
-    </div>
-  </div>
-  
-  <!-- Episodes Modal -->
-  <div id="episodesModal" class="modal">
-    <div class="modal-content" style="max-width: 800px;">
-      <span class="close" onclick="closeEpisodesModal()">&times;</span>
-      <h2 id="seasonTitle" style="color: var(--secondary-color);"></h2>
-      <div id="episodesContainer" class="links" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"></div>
-    </div>
-  </div>
-</div>
   <h2>Movies from our YouTube channel (subscribe)</h2>
   <div class="carousel">
     <button class="carousel-control prev" onclick="event.stopPropagation(); moveCarousel(-1)">❮</button>
@@ -689,7 +646,39 @@
     <button class="carousel-control next" onclick="event.stopPropagation(); moveCarousel(1)">❯</button>
   </div>
 </div>
-
+<!-- TV Series Section -->
+<div class="section">
+  <h2>Popular TV Series</h2>
+  <div class="content-preview">
+    <!-- Godfather of Harlem -->
+    <div class="preview-item" onclick="showSeasons('godfather', event)">
+      <div class="thumbnail-container" style="height: 250px;">
+        <img src="https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" 
+             alt="Godfather of Harlem" class="preview-thumbnail">
+        <div class="play-button"></div>
+      </div>
+      <div class="preview-title">Godfather of Harlem</div>
+    </div>
+  </div>
+  
+  <!-- Seasons Modal -->
+  <div id="seasonsModal" class="modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="close" onclick="closeSeasonsModal()">&times;</span>
+      <h2 id="seriesTitle" style="color: var(--secondary-color);"></h2>
+      <div id="seasonsContainer" class="categories"></div>
+    </div>
+  </div>
+  
+  <!-- Episodes Modal -->
+  <div id="episodesModal" class="modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="close" onclick="closeEpisodesModal()">&times;</span>
+      <h2 id="seasonTitle" style="color: var(--secondary-color);"></h2>
+      <div id="episodesContainer" class="links" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"></div>
+    </div>
+  </div>
+</div>
  <!-- More Google Drive Videos -->
 <div class="section">
   <h2>TV Yami Movies</h2>
@@ -803,39 +792,36 @@
 const seriesDatabase = {
   "godfather": {
     title: "Godfather of Harlem",
-    poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
     seasons: {
       "1": {
         episodes: {
           "1": {
             title: "By Whatever Means Necessary",
-            url: "https://drive.google.com/file/d/1M_6-NJf8yGqKLcphkelnRoKLvxD1K1H-/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+            url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
           },
           "2": {
             title: "The Nitty Gritty",
-            url: "https://drive.google.com/file/d/1M_6-NJf8yGqKLcphkelnRoKLvxD1K1H-/preview",
+            url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview",
             thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
           }
-          // Add more episodes as needed
         }
       }
-      // Add more seasons as needed
     }
   }
-  // Add more series as needed
 };
 
 // Series functions
-function showSeasons(seriesId) {
+function showSeasons(seriesId, event) {
+  event.stopPropagation(); // This prevents the YouTube redirect
   const series = seriesDatabase[seriesId];
   document.getElementById('seriesTitle').textContent = series.title;
   
   const seasonsContainer = document.getElementById('seasonsContainer');
   seasonsContainer.innerHTML = '';
   
-  // Create season buttons
   for (const seasonNum in series.seasons) {
     const seasonBtn = document.createElement('button');
     seasonBtn.className = 'category';
@@ -860,7 +846,6 @@ function showEpisodes(seriesId, seasonNum) {
   const episodesContainer = document.getElementById('episodesContainer');
   episodesContainer.innerHTML = '';
   
-  // Create episode list
   for (const episodeNum in season.episodes) {
     const episode = season.episodes[episodeNum];
     const episodeItem = document.createElement('div');
