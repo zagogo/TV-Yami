@@ -1005,7 +1005,7 @@
       document.body.setAttribute('data-theme', 
         document.body.getAttribute('data-theme') === 'light' ? '' : 'light');
     });
-// TV Series Database
+// TV Series Database - SINGLE declaration
 const seriesDatabase = {
   "godfather": {
     title: "Godfather of Harlem",
@@ -1027,35 +1027,30 @@ const seriesDatabase = {
         }
       }
     }
-  }
-};
-
-    const seriesDatabase = {
-  // ... keep existing series ...
-
-  "Love is blind": {                          // Unique ID (no spaces)
-    title: "Love is blind",           // Series title
-    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg", // Poster URL
-    description: "Tariq navigates...",       // Short description
+  },
+  // ▼ New series added with comma after previous entry ▼
+  "love-is-blind": {  // Fixed: lowercase with hyphens
+    title: "Love Is Blind",  // Fixed capitalization
+    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg",
+    description: "Singers who try to find love without seeing each other first.",
     seasons: {
-      "1": {                                 // Season number
+      "1": {
         episodes: {
-          "1": {                             // Episode number
-            title: " Is Love blind",       // Episode title
-            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview", // Ep1 link
-            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" // Ep1 thumb
+          "1": {
+            title: "Is Love Blind",  // Fixed title
+            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview",
+            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg"
           },
           "2": {
-            title: "hare "Will You Marry Me", 
-            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview", // Ep2 link
-            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" // Ep2 thumb
+            title: "Are You Willing to Marry Me",  // Fixed title
+            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview",
+            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg"
           }
-          // Add more episodes as needed
         }
       }
-      // Add more seasons later
     }
   }
+  // ▼ Add more series here with commas ▼
 };
 
 // Series functions
