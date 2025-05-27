@@ -494,6 +494,23 @@
       100% { transform: rotate(360deg); }
     }
 
+    <div class="content-preview">
+  <!-- Existing Godfather of Harlem -->
+  <div class="preview-item" onclick="showSeasons('godfather', event)">
+    <!-- ... -->
+  </div>
+
+  <!-- Love is blind -->
+  <div class="preview-item" onclick="showSeasons('Love is blind', event)">
+    <div class="thumbnail-container" style="height: 250px;">
+      <img src="https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" 
+           alt="Love is blind" class="preview-thumbnail">
+      <div class="play-button"></div>
+    </div>
+    <div class="preview-title">Love is blind</div>
+  </div>
+</div>
+
     /* Ad container styling */
     .ad-container {
       margin: 20px 0;
@@ -1009,6 +1026,34 @@ const seriesDatabase = {
           }
         }
       }
+    }
+  }
+};
+
+    const seriesDatabase = {
+  // ... keep existing series ...
+
+  "Love is blind": {                          // Unique ID (no spaces)
+    title: "Love is blind",           // Series title
+    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg", // Poster URL
+    description: "Tariq navigates...",       // Short description
+    seasons: {
+      "1": {                                 // Season number
+        episodes: {
+          "1": {                             // Episode number
+            title: " Is Love blind",       // Episode title
+            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview", // Ep1 link
+            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" // Ep1 thumb
+          },
+          "2": {
+            title: "hare "Will You Marry Me", 
+            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview", // Ep2 link
+            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" // Ep2 thumb
+          }
+          // Add more episodes as needed
+        }
+      }
+      // Add more seasons later
     }
   }
 };
