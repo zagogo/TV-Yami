@@ -416,7 +416,11 @@
       background-color: rgba(255, 69, 0, 1);
     }
     
-    /* Content preview styles */
+<style>
+    /* [Your existing CSS above...] */
+
+    /* ======= TV SERIES ADDITIONS START ======= */
+    /* Enhanced Content Preview */
     .content-preview {
       display: flex;
       flex-wrap: wrap;
@@ -425,106 +429,94 @@
       margin: 30px auto;
       max-width: 1000px;
     }
-    
+
     .preview-item {
       width: 180px;
       cursor: pointer;
       transition: transform 0.3s;
+      position: relative;
     }
-    
+
     .preview-item:hover {
       transform: scale(1.05);
     }
-    
+
     .preview-thumbnail {
       width: 100%;
       height: 250px;
       border-radius: 8px;
       object-fit: cover;
-      border: 2px solid #444;
+      border: 2px solid var(--primary-color);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    
+
     .preview-title {
       margin-top: 8px;
       font-size: 16px;
       color: var(--secondary-color);
-    }
-
-    /* Social Ad Styling */
-    .social-ad {
-      background: var(--card-bg);
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 600px;
-      border: 1px solid var(--primary-color);
-    }
-
-    /* Next Video Button */
-    .next-video-btn {
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 15px;
+      text-align: center;
       font-weight: bold;
-      transition: background 0.3s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .next-video-btn:hover {
-      background: #e03e00;
+    /* Episode Modal Styles */
+    .episode-item {
+      background: var(--card-bg);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--primary-color);
     }
 
-    /* Loading spinner */
-    .spinner {
-      display: none;
-      width: 40px;
-      height: 40px;
-      margin: 20px auto;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top: 4px solid var(--primary-color);
-      animation: spin 1s linear infinite;
-    }
+    /* ======= TV SERIES ADDITIONS END ======= */
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    /* [Your existing .social-ad, .spinner, etc. below...] */
+</style>
 
-    <div class="content-preview">
-  <!-- Existing Godfather of Harlem -->
-  <div class="preview-item" onclick="showSeasons('godfather', event)">
-    <!-- ... -->
-  </div>
+<!-- In your BODY section: -->
+<div class="content-preview">
+  <!-- Existing Godfather -->
+  <div class="preview-item" onclick="showSeasons('godfather', event)">...</div>
 
-  <!-- Love is blind -->
-  <div class="preview-item" onclick="showSeasons('Love is blind', event)">
+  <!-- New Love Is Blind -->
+  <div class="preview-item" onclick="showSeasons('love-is-blind', event)">
     <div class="thumbnail-container" style="height: 250px;">
       <img src="https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" 
-           alt="Love is blind" class="preview-thumbnail">
+           alt="Love Is Blind" class="preview-thumbnail">
       <div class="play-button"></div>
     </div>
-    <div class="preview-title">Love is blind</div>
+    <div class="preview-title">Love Is Blind</div>
   </div>
 </div>
 
-    /* Ad container styling */
-    .ad-container {
-      margin: 20px 0;
-      min-height: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(255,255,255,0.05);
-      border-radius: 5px;
-      padding: 10px;
+<script>
+// [Your existing JavaScript...]
+
+/* TV Series Database - ADD THIS */
+const seriesDatabase = {
+  "godfather": { /*...*/ },
+  "love-is-blind": {
+    title: "Love Is Blind",
+    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg",
+    seasons: {
+      "1": {
+        episodes: {
+          "1": { 
+            title: "Is Love Blind", 
+            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview" 
+          },
+          "2": { 
+            title: "Will You Marry Me", 
+            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview" 
+          }
+        }
+      }
     }
-  </style>
-</head>
-<body>
+  }
+};
+</script>
 
   <!-- Theme Toggle Button -->
   <button class="theme-toggle" id="themeToggle">🌓</button>
