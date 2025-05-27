@@ -421,6 +421,7 @@
 
     /* ======= TV SERIES ADDITIONS START ======= */
     /* Enhanced Content Preview */
+/* Content preview styles */
     .content-preview {
       display: flex;
       flex-wrap: wrap;
@@ -429,94 +430,106 @@
       margin: 30px auto;
       max-width: 1000px;
     }
-
+    
     .preview-item {
       width: 180px;
       cursor: pointer;
       transition: transform 0.3s;
-      position: relative;
     }
-
+    
     .preview-item:hover {
       transform: scale(1.05);
     }
-
+    
     .preview-thumbnail {
       width: 100%;
       height: 250px;
       border-radius: 8px;
       object-fit: cover;
-      border: 2px solid var(--primary-color);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border: 2px solid #444;
     }
-
+    
     .preview-title {
       margin-top: 8px;
       font-size: 16px;
       color: var(--secondary-color);
-      text-align: center;
-      font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
-    /* Episode Modal Styles */
-    .episode-item {
+    /* Social Ad Styling */
+    .social-ad {
       background: var(--card-bg);
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      border-left: 3px solid var(--primary-color);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      border: 1px solid var(--primary-color);
     }
 
-    /* ======= TV SERIES ADDITIONS END ======= */
+    /* Next Video Button */
+    .next-video-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
 
-    /* [Your existing .social-ad, .spinner, etc. below...] */
-</style>
+    .next-video-btn:hover {
+      background: #e03e00;
+    }
 
-<!-- In your BODY section: -->
-<div class="content-preview">
-  <!-- Existing Godfather -->
-  <div class="preview-item" onclick="showSeasons('godfather', event)">...</div>
+    /* Loading spinner */
+    .spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      margin: 20px auto;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid var(--primary-color);
+      animation: spin 1s linear infinite;
+    }
 
-  <!-- New Love Is Blind -->
-  <div class="preview-item" onclick="showSeasons('love-is-blind', event)">
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    <div class="content-preview">
+  <!-- Existing Godfather of Harlem -->
+  <div class="preview-item" onclick="showSeasons('godfather', event)">
+    <!-- ... -->
+  </div>
+
+  <!-- Love is blind -->
+  <div class="preview-item" onclick="showSeasons('Love is blind', event)">
     <div class="thumbnail-container" style="height: 250px;">
       <img src="https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg" 
-           alt="Love Is Blind" class="preview-thumbnail">
+           alt="Love is blind" class="preview-thumbnail">
       <div class="play-button"></div>
     </div>
-    <div class="preview-title">Love Is Blind</div>
+    <div class="preview-title">Love is blind</div>
   </div>
 </div>
 
-<script>
-// [Your existing JavaScript...]
-
-/* TV Series Database - ADD THIS */
-const seriesDatabase = {
-  "godfather": { /*...*/ },
-  "love-is-blind": {
-    title: "Love Is Blind",
-    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg",
-    seasons: {
-      "1": {
-        episodes: {
-          "1": { 
-            title: "Is Love Blind", 
-            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview" 
-          },
-          "2": { 
-            title: "Will You Marry Me", 
-            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview" 
-          }
-        }
-      }
+    /* Ad container styling */
+    .ad-container {
+      margin: 20px 0;
+      min-height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border-radius: 5px;
+      padding: 10px;
     }
-  }
-};
-</script>
+  </style>
+</head>
+<body>
 
   <!-- Theme Toggle Button -->
   <button class="theme-toggle" id="themeToggle">🌓</button>
@@ -998,62 +1011,43 @@ const seriesDatabase = {
         document.body.getAttribute('data-theme') === 'light' ? '' : 'light');
     });
 // TV Series Database - SINGLE declaration
+// TV Series Database
 const seriesDatabase = {
   "godfather": {
     title: "Godfather of Harlem",
-    poster: "https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
     description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
     seasons: {
       "1": {
         episodes: {
           "1": {
             title: "By Whatever Means Necessary",
-            url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            url: "https://drive.google.com/file/d/1M_6-NJf8yGqKLcphkelnRoKLvxD1K1H-/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
           },
           "2": {
             title: "The Nitty Gritty",
-            url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview",
+            url: "https://drive.google.com/file/d/1M_6-NJf8yGqKLcphkelnRoKLvxD1K1H-/preview",
             thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
           }
+          // Add more episodes as needed
         }
       }
-    }
-  },
-  // ▼ New series added with comma after previous entry ▼
-  "love-is-blind": {  // Fixed: lowercase with hyphens
-    title: "Love Is Blind",  // Fixed capitalization
-    poster: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg",
-    description: "Singers who try to find love without seeing each other first.",
-    seasons: {
-      "1": {
-        episodes: {
-          "1": {
-            title: "Is Love Blind",  // Fixed title
-            url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview",
-            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg"
-          },
-          "2": {
-            title: "Are You Willing to Marry Me",  // Fixed title
-            url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview",
-            thumbnail: "https://icecreamconvos.com/wp-content/uploads/2024/02/Love-Is-Blind-Season-6.jpeg"
-          }
-        }
-      }
+      // Add more seasons as needed
     }
   }
-  // ▼ Add more series here with commas ▼
+  // Add more series as needed
 };
 
 // Series functions
-function showSeasons(seriesId, event) {
-  event.stopPropagation(); // This prevents the YouTube redirect
+function showSeasons(seriesId) {
   const series = seriesDatabase[seriesId];
   document.getElementById('seriesTitle').textContent = series.title;
   
   const seasonsContainer = document.getElementById('seasonsContainer');
   seasonsContainer.innerHTML = '';
   
+  // Create season buttons
   for (const seasonNum in series.seasons) {
     const seasonBtn = document.createElement('button');
     seasonBtn.className = 'category';
@@ -1078,6 +1072,7 @@ function showEpisodes(seriesId, seasonNum) {
   const episodesContainer = document.getElementById('episodesContainer');
   episodesContainer.innerHTML = '';
   
+  // Create episode list
   for (const episodeNum in season.episodes) {
     const episode = season.episodes[episodeNum];
     const episodeItem = document.createElement('div');
